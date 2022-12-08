@@ -50,3 +50,26 @@ function showPopUp() {
     };
   });
 }
+
+const ratings = {
+  productOne: 14,
+  productTwo: 5,
+  productThree: 14,
+  productFour: 14,
+  productFive: 20,
+  productSix: 10,
+};
+
+// Run getRatings when DOM loads
+document.addEventListener("DOMContentLoaded", getRatings);
+
+function getRatings() {
+  for (let rating in ratings) {
+    const starPercentageRounded = ratings[rating] + "%";
+    console.log(starPercentageRounded);
+
+    // Set width of stars-inner to percentage
+    document.querySelector(`.${rating} .stars-inner`).style.width =
+      starPercentageRounded;
+  }
+}
