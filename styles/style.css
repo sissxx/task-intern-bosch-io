@@ -13,7 +13,7 @@ body {
 
 #container {
   margin: 0 auto;
-  padding: 9rem 15rem;
+  padding: 13rem 15rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,15 +30,6 @@ body {
 
 .product {
   margin: 15px;
-  -webkit-transition: -webkit-transform 1s ease;
-  transition: -webkit-transform 1s ease;
-  transition: transform 1s ease;
-  transition: transform 1s ease, -webkit-transform 1s ease;
-}
-
-.product:hover {
-  -webkit-transform: scale(1.3);
-          transform: scale(1.3);
 }
 
 .box {
@@ -73,7 +64,7 @@ body {
 
 .product-preview .preview {
   display: none;
-  /* -ms-grid-columns: (1fr)[2]; */
+  -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
   height: 600px;
   border: 1px solid #707070;
@@ -82,7 +73,7 @@ body {
   background: #fff;
   position: relative;
   margin: 3rem;
-  width: 53%;
+  width: 45%;
 }
 
 .product-preview .preview.active {
@@ -96,6 +87,12 @@ body {
   border-right: 1px solid #707070;
   border-top-left-radius: 10px !important;
   border-bottom-left-radius: 10px !important;
+}
+
+.product-name {
+  font-size: 30px;
+  letter-spacing: 1px;
+  padding-bottom: 5px;
 }
 
 .product-content {
@@ -117,24 +114,37 @@ body {
   color: #555555;
 }
 
-.product-name {
-  font-size: 25px;
-  letter-spacing: 1px;
-}
-
-.stars {
+.stars-outer {
+  position: -webkit-sticky;
+  position: sticky;
   display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 12px;
-  padding-top: 5px;
+  font-size: 13px;
 }
 
-.fa-star {
-  padding-left: 3px;
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
 }
 
-.stars .serialNumber {
+.stars-outer::before {
+  content: "\f005  \f005  \f005  \f005  \f005 ";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #ccc;
+}
+
+.stars-inner::before {
+  content: "\f005  \f005  \f005  \f005  \f005 ";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  color: #F2D360;
+}
+
+.serialNumber {
   padding-left: 10px;
   color: #555555;
 }
@@ -171,10 +181,5 @@ button {
   cursor: pointer;
   position: absolute;
   bottom: 0px;
-}
-
-button:hover {
-  color: #fff;
-  background: #30506c;
 }
 /*# sourceMappingURL=style.css.map */
