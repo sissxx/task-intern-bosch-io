@@ -30,6 +30,17 @@ body {
 
 .product {
   margin: 15px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: -webkit-transform 1s ease;
+  transition: -webkit-transform 1s ease;
+  transition: transform 1s ease;
+  transition: transform 1s ease, -webkit-transform 1s ease;
+}
+
+.product:hover {
+  -webkit-transform: scale(1.3);
+          transform: scale(1.3);
 }
 
 .box {
@@ -181,5 +192,10 @@ button {
   cursor: pointer;
   position: absolute;
   bottom: 0px;
+}
+
+button:hover {
+  background: #30506c;
+  color: #ccc;
 }
 /*# sourceMappingURL=style.css.map */
